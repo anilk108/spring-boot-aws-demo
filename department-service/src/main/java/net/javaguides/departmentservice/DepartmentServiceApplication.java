@@ -8,7 +8,7 @@ import org.springframework.context.annotation.Bean;
 @SpringBootApplication
 public class DepartmentServiceApplication {
 
-    // creating spring bean for ModelMapper
+    // creating spring bean for ModelMapper - new commit
     @Bean
     public ModelMapper modelMapper() {
         return new ModelMapper();
