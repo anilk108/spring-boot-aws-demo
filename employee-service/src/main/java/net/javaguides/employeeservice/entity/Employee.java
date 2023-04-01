@@ -16,12 +16,9 @@ public class Employee {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
-    @NotNull     // hibernate validation
     private String firstName;
-    @NotNull     // hibernate validation
     private String lastName;
     @Column(nullable = false, unique = true)
-    @Email          // hibernate validation
     private String email;
     private String departmentCode;
     private String organizationCode;
