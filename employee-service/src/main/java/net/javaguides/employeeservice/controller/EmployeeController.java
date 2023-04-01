@@ -1,5 +1,6 @@
 package net.javaguides.employeeservice.controller;
 
+import jakarta.validation.Valid;
 import lombok.AllArgsConstructor;
 import net.javaguides.employeeservice.dto.APIResponseDto;
 import net.javaguides.employeeservice.dto.EmployeeDto;
@@ -14,8 +15,9 @@ import org.springframework.web.bind.annotation.*;
 public class EmployeeController {
     private EmployeeService employeeService;
 
+    // @Valid used for the api validation using Hibernate, key attributes added in dto files
     @PostMapping
-    public ResponseEntity<EmployeeDto> saveEmployee(@RequestBody EmployeeDto employeeDto) {
+    public ResponseEntity<EmployeeDto> saveEmployee(@Valid @RequestBody EmployeeDto employeeDto) {
         EmployeeDto savedEmployeeDto = employeeService.saveEmployee(employeeDto);
         return new ResponseEntity<>(savedEmployeeDto, HttpStatus.CREATED);
     }
